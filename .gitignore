@@ -1,9 +1,5 @@
-# Ignore folder with SMFL libraries and .vs folder
+# Ignore .vs folder
 .vs
-Bibliosy
-# Debug and Release folder
-Debug
-Release
 x64
 # Prerequisites
 *.d
