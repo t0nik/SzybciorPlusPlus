@@ -17,7 +17,7 @@ You can move your character using **A** - left, **D** - right and **Space** - ju
 - Fixed collision (problem with updating player before tilemap collision)
 - Fixed starting position of a player
 - Minor changes to GUI elements in states
-- Created a StateData class for easier data transfer in all states
-	-added a gridSize variable
+- Created a StateData class for easier data transfer in all states	
+	- Added a gridSize variable
 - Created bakcup of the tilemap .szybcior file
 - ~~Added fullscreen dropbox in settings~~ Gave up
