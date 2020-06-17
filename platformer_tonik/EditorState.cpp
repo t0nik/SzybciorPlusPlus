@@ -6,13 +6,13 @@ void EditorState::initVariables()
 	this->textureRect = sf::IntRect(0, 0, 80, 80);
 	this->collision = false;
 	this->type = TileTypes::DEFAULT;
-	this->cameraSpeed = 500.f;
+	this->cameraSpeed = 1000.f;
 }
 
 void EditorState::initView()
 {
-	this->view.setSize(sf::Vector2f(1366, 768));
-	this->view.setCenter(683.f, 384.f);
+	this->view.setSize(sf::Vector2f(1920.f, 1080.f));
+	this->view.setCenter(1920/2.f, 1080/2.f);
 }
 
 void EditorState::initBackground()
@@ -72,13 +72,12 @@ void EditorState::initButtons()
 
 void EditorState::initGui()
 {
-	this->sidebar.setSize(sf::Vector2f(60.f, 768.f));
+	this->sidebar.setSize(sf::Vector2f(60.f, 1080.f));
 	this->sidebar.setFillColor(sf::Color(50, 50, 50, 100));
 	this->sidebar.setOutlineColor(sf::Color(200, 200, 200, 150));
 	this->sidebar.setOutlineThickness(-1.f);
 
-	//FIXPOTEM
-	this->selectorRect.setSize(sf::Vector2f(80.f, 80.f));
+	this->selectorRect.setSize(sf::Vector2f(this->stateData->gridSize, this->stateData->gridSize));
 	this->selectorRect.setFillColor(sf::Color(255, 255, 255, 150));
 	this->selectorRect.setOutlineThickness(-1.f);
 	this->selectorRect.setOutlineColor(sf::Color::Green);
@@ -96,13 +95,12 @@ void EditorState::initGui()
 
 void EditorState::initTilemap()
 {
-	//FIX POTEM
-	this->tilemap = new Tilemap(80.f, 50, 40, "Resources/Images/Tiles/texturesheet.png");
+	this->tilemap = new Tilemap(this->stateData->gridSize, 100, 80, "Resources/Images/Tiles/texturesheet.png");
 }
 
 
-EditorState::EditorState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
-	: State(window, supportedKeys, states)
+EditorState::EditorState(StateData* state_data)
+	: State(state_data)
 {
 	this->initVariables();
 	this->initView();
@@ -227,8 +225,7 @@ void EditorState::updateGui(const float& dt)
 	if (!this->textureSelector->getActive())
 	{
 		this->selectorRect.setTextureRect(this->textureRect);
-		//Fix
-		this->selectorRect.setPosition(this->mousePosGrid.x * 80, this->mousePosGrid.y * 80);
+		this->selectorRect.setPosition(this->mousePosGrid.x * this->stateData->gridSize, this->mousePosGrid.y * this->stateData->gridSize);
 	}
 	this->cursorText.setPosition(this->mousePosView.x + 85.f, this->mousePosView.y - 100.f);
 	std::stringstream ss;

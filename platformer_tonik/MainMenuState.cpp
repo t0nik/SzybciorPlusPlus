@@ -55,22 +55,22 @@ void MainMenuState::initKeybinds()
 
 void MainMenuState::initButtons()
 {
-	this->buttons["GAME_STATE"] = new gui::Button(155.f, 300.f, 250.f, 75.f,
+	this->buttons["GAME_STATE"] = new gui::Button(200.f, 400.f, 250.f, 75.f,
 		&this->font, "New Game", 42,
 		sf::Color(0, 0, 0, 255), sf::Color(240, 240, 240, 255), sf::Color(10, 10, 10, 255),
 		sf::Color(0, 50, 100, 0), sf::Color(170, 220, 230, 0), sf::Color(20, 20, 20, 0));
 
-	this->buttons["SETTINGS_STATE"] = new gui::Button(155.f, 400.f, 250.f, 75.f,
+	this->buttons["SETTINGS_STATE"] = new gui::Button(200.f, 550.f, 250.f, 75.f,
 		&this->font, "Settings", 42,
 		sf::Color(0, 0, 0, 255), sf::Color(240, 240, 240, 255), sf::Color(10, 10, 10, 255),
 		sf::Color(0, 50, 100, 0), sf::Color(173, 220, 230, 0), sf::Color(20, 20, 20, 0));
 
-	this->buttons["EDITOR_STATE"] = new gui::Button(155.f, 500.f, 250.f, 75.f,
+	this->buttons["EDITOR_STATE"] = new gui::Button(200.f, 700.f, 250.f, 75.f,
 		&this->font, "Editor", 42,
 		sf::Color(0, 0, 0, 255), sf::Color(240, 240, 240, 255), sf::Color(10, 10, 10, 255),
 		sf::Color(0, 50, 100, 0), sf::Color(173, 220, 230, 0), sf::Color(20, 20, 20, 0));
 
-	this->buttons["EXIT_STATE"] = new gui::Button(155.f, 600.f, 250.f, 75.f,
+	this->buttons["EXIT_STATE"] = new gui::Button(200.f, 850.f, 250.f, 75.f,
 		&this->font, "Quit", 42,
 		sf::Color(0, 0, 0, 255), sf::Color(240, 240, 240, 255), sf::Color(10, 10, 10, 255),
 		sf::Color(0, 50, 100, 0), sf::Color(173, 220, 230, 0), sf::Color(20, 20, 20, 0));
@@ -79,8 +79,8 @@ void MainMenuState::initButtons()
 }
 
 
-MainMenuState::MainMenuState(sf::RenderWindow* window, GraphicsSettings& gfxSettings, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
-	: State(window, supportedKeys, states), gfxSettings(gfxSettings)
+MainMenuState::MainMenuState(StateData* state_data)
+	: State(state_data)
 {
 	this->initVariables();
 	this->initBackground();
@@ -115,18 +115,18 @@ void MainMenuState::updateButtons()
 	//Nowa gra
 	if (this->buttons["GAME_STATE"]->isPressed())
 	{
-		this->states->push(new GameState(this->window, this->supportedKeys, this->states));
+		this->states->push(new GameState(this->stateData));
 	}
 
 	//Ustawienia
 	if (this->buttons["SETTINGS_STATE"]->isPressed())
 	{
-		this->states->push(new SettingsState(this->window, this->gfxSettings, this->supportedKeys, this->states));
+		this->states->push(new SettingsState(this->stateData));
 	}
 	//Edytor
 	if (this->buttons["EDITOR_STATE"]->isPressed())
 	{
-		this->states->push(new EditorState(this->window, this->supportedKeys, this->states));
+		this->states->push(new EditorState(this->stateData));
 	}
 
 	//Wyjdü z gry

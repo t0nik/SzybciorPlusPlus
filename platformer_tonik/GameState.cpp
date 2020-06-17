@@ -3,17 +3,17 @@
 
 void GameState::initDeferredRender()
 {
-	this->renderTexture.create(1366, 768);
+	this->renderTexture.create(1920, 1080);
 
 	this->renderSprite.setTexture(this->renderTexture.getTexture());
-	this->renderSprite.setTextureRect(sf::IntRect(0, 0, 1366, 768));
+	this->renderSprite.setTextureRect(sf::IntRect(0, 0, 1920, 1080));
 }
 
 //Funkcje inicjalizuj¹ce
 void GameState::initView()
 {
-	this->view.setSize(sf::Vector2f(1366, 768));
-	this->view.setCenter(683.f, 384.f);
+	this->view.setSize(sf::Vector2f(1920.f, 1080.f));
+	this->view.setCenter(1920.f/2, 1080.f/2);
 }
 
 void GameState::initKeybinds()
@@ -59,19 +59,18 @@ void GameState::initPauseMenu()
 
 void GameState::initPlayers()
 {
-	this->player = new Player(240, 400, this->textures["PLAYER_IDLE"]);
+	this->player = new Player(1120, 1360, this->textures["PLAYER_IDLE"]);
 }
 
 void GameState::initTilemap()
 {
-	//FIX POZNIEJ
-	this->tilemap = new Tilemap(80.f, 50, 40, "Resources/Images/Tiles/texturesheet.png");
+	this->tilemap = new Tilemap(this->stateData->gridSize, 100, 80, "Resources/Images/Tiles/texturesheet.png");
 	this->tilemap->loadFromFile("test.szybcior");
 }
 
 //Konstruktory / Destruktory
-GameState::GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
-	: State(window, supportedKeys, states)
+GameState::GameState(StateData* state_data)
+	: State(state_data)
 {
 	this->initDeferredRender();
 	this->initView();
@@ -151,9 +150,9 @@ void GameState::update(const float& dt)
 
 		this->updatePlayerInput(dt);
 
-		this->player->update(dt);
-
 		this->updateTilemap(dt);
+
+		this->player->update(dt);
 	}
 	else // Odœwie¿anie z pauz¹
 	{

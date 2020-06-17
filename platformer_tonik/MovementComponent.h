@@ -21,6 +21,8 @@ public:
 	//Akcesory
 	const sf::Vector2f& getVelocity() const;
 
+	const bool& onGround() const;
+
 	//Functions
 	void stopVelocity();
 	void stopVelocityX();

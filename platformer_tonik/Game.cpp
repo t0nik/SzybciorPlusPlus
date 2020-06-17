@@ -10,12 +10,15 @@ void Game::initVariables()
     this->window = NULL;
 
     this->dt = 0.f;
+
+    this->gridSize = 80.f;
 }
 
 void Game::initGraphicsSettings()
 {
     this->gfxSettings.loadFromFile("Config/graphics.ini");
 }
+
 
 void Game::initWindow()
 {
@@ -68,9 +71,18 @@ void Game::initKeys()
 
 }
 
+void Game::initStateData()
+{
+    this->stateData.window = this->window;
+    this->stateData.gfxSettings = &this->gfxSettings;
+    this->stateData.supportedKeys = &this->supportedKeys;
+    this->stateData.states = &this->states;
+    this->stateData.gridSize = this->gridSize;
+}
+
 void Game::initStates()
 {
-    this->states.push(new MainMenuState(this->window, this->gfxSettings, &this->supportedKeys, &this->states));
+    this->states.push(new MainMenuState(&this->stateData));
 }
 
 //Konstruktory/Destruktory
@@ -81,6 +93,7 @@ Game::Game()
     this->initGraphicsSettings();
     this->initWindow();
     this->initKeys();
+    this->initStateData();
     this->initStates();
 }
 
@@ -115,7 +128,6 @@ void Game::updateDt()
 void Game::updateSMFLEvents()
 {
     /*Odœwie¿anie gry*/
-    sf::Event event;
     while (this->window->pollEvent(this->sfEvent))
     {
         if (this->sfEvent.type == sf::Event::Closed)

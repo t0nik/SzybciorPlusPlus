@@ -8,6 +8,7 @@ private:
 	//Zmienne
 	GraphicsSettings gfxSettings;
 	sf::RenderWindow *window;
+	StateData stateData;
 	sf::Event sfEvent;
 
 	sf::Clock dtClock;
@@ -17,11 +18,14 @@ private:
 
 	std::map<std::string, int> supportedKeys;
 
+	float gridSize;
+
 	//Inicjalizacja (Start)
 	void initVariables();
 	void initGraphicsSettings();
 	void initWindow();
 	void initKeys();
+	void initStateData();
 	void initStates();
 
 

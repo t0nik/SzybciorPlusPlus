@@ -17,6 +17,11 @@ const sf::Vector2f& MovementComponent::getVelocity() const
 	return this->velocity;
 }
 
+const bool& MovementComponent::onGround() const
+{
+	return false;
+}
+
 //Funkcje
 
 void MovementComponent::stopVelocity()

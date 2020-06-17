@@ -77,6 +77,7 @@ const sf::FloatRect& Entity::getNextPositionBounds(const float& dt) const
 	return sf::FloatRect();
 }
 
+
 //Funkcje
 
 void Entity::setPosition(const float x, const float y)
@@ -118,6 +119,7 @@ void Entity::jump(const float dir_y, const float& dt)
 {
 	if (this->movementComponent)
 	{
+		//if (&this->movementComponent->onGround)
 		this->movementComponent->jump(dir_y, dt);
 	}
 }

@@ -10,6 +10,7 @@ void Player::initVariables()
 void Player::initComponents()
 {
 	this->createHitboxComponent(this->sprite, 30.f, 0.f, 73.f, 128.f);
+	//FIX GRAVITY
 	this->createMovementComponent(600.f, 800.f, 150.f, 100.f);
 }
 

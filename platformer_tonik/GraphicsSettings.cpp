@@ -3,7 +3,7 @@
 
 GraphicsSettings::GraphicsSettings()
 {
-	this->title = "STANDARDOWY";
+	this->title = "STANDARD";
 	this->resolution = sf::VideoMode::getDesktopMode();
 	this->fullscreen = false;
 	this->verticalSync = false;

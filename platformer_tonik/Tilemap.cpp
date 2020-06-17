@@ -53,7 +53,7 @@ Tilemap::Tilemap(float gridSize, unsigned width, unsigned height, std::string te
 	}
 
 	if(!this->tileSheet.loadFromFile(texture_file))
-		std::cout << "ERROR::TILEMAP::NIE UDALO SIE ZALADOWAC TEKSTURY OBSZARU::NAZWAPLIKU: " << texture_file << "\n";
+		std::cout << "ERROR::TILEMAP::NIE UDALO SIE ZALADOWAC TEKSTUR OBSZAROW - NAZWA PLIKU: " << texture_file << "\n";
 
 	this->collisionBox.setSize(sf::Vector2f(gridSize, gridSize));
 	this->collisionBox.setFillColor(sf::Color(255, 0, 0, 50));
@@ -250,10 +250,10 @@ void Tilemap::updateCollision(Entity* entity, const float& dt)
 	}
 	else if (entity->getPosition().y + entity->getGlobalBounds().height > this->maxSizeWorldF.y)
 	{
-		entity->setPosition(entity->getPosition().x, this->maxSizeWorldF.y - entity->getGlobalBounds().height);
+		entity->setPosition(entity->getPosition().x, this->maxSizeWorldF.y + entity->getGlobalBounds().height);
 		entity->stopVelocityY();
 	}
-
+	//std::cout << (entity->getPosition().y + entity->getGlobalBounds().height) << std::endl << this->maxSizeWorldF.y << std::endl;
 	//OBSZARY
 	this->fromX = entity->getGridPosition(this->gridSizeU).x - 1;
 	if (this->fromX < 0)

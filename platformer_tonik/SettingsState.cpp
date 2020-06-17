@@ -69,13 +69,17 @@ void SettingsState::initGui()
 	{
 		modes_str.push_back(std::to_string(i.width) + "x" + std::to_string(i.height));
 	}
-	this->dropDownLists["RESOLUTION"] =  new gui::DropDownList(350, 300, 200, 50, font, modes_str.data(), modes_str.size());
+	/*std::vector<std::string> fullscreen_str;
+	fullscreen_str.push_back(std::to_string(this->stateData->gfxSettings->fullscreen));
+	fullscreen_str.push_back(std::to_string(!this->stateData->gfxSettings->fullscreen));*/
+	this->dropDownLists["RESOLUTION"] =  new gui::DropDownList(450, 400, 200, 50, font, modes_str.data(), modes_str.size());
+	//this->dropDownLists["FULLSCREEN"] = new gui::DropDownList(450, 450, 200, 50, font, fullscreen_str.data(), modes_str.size());
 }
 
 void SettingsState::initText()
 {
 	this->optionsText.setFont(this->font);
-	this->optionsText.setPosition(sf::Vector2f(155.f, 300.f));
+	this->optionsText.setPosition(sf::Vector2f(200.f, 400.f));
 	this->optionsText.setCharacterSize(35);
 	this->optionsText.setFillColor(sf::Color(0, 0, 0, 255));
 	
@@ -83,8 +87,8 @@ void SettingsState::initText()
 	this->optionsText.setString("Resolution \n\nFullscreen \n\nVsync \n\nAntialiasing \n\n ");
 }
 
-SettingsState::SettingsState(sf::RenderWindow* window, GraphicsSettings& gfxSettings, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
-	: State(window, supportedKeys, states), gfxSettings(gfxSettings)
+SettingsState::SettingsState(StateData* state_data)
+	: State(state_data)
 {
 	this->initVariables();
 	this->initBackground();
@@ -137,9 +141,9 @@ void SettingsState::updateGui(const float& dt)
 	if (this->buttons["APPLY"]->isPressed())
 	{
 		//TEST USUÑ PÓNIEJ
-		this->gfxSettings.resolution = this->modes[this->dropDownLists["RESOLUTION"]->getActiveElementId()];
-
-		this->window->create(this->gfxSettings.resolution, this->gfxSettings.title, sf::Style::Default);
+		this->stateData->gfxSettings->resolution = this->modes[this->dropDownLists["RESOLUTION"]->getActiveElementId()];
+		//this->stateData->gfxSettings->fullscreen = this->dropDownLists["FULLSCREEN"]->getActiveElementId();
+		this->window->create(this->stateData->gfxSettings->resolution, this->stateData->gfxSettings->title, sf::Style::Default);
 	}
 
 	//Dropdown listy
