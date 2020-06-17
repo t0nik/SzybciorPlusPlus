@@ -4,7 +4,7 @@ A 2d platformer project.
 
 Made in Visual Studio Community 2019.
 To run the game, open the VC++ Project file, in the configuration field choose Debug and x86 and you are ready to go.
-**SMFL version:** SFML 2.5.1
+**SFML version:** SFML 2.5.1
 
 ### How to play:
 You can move your character using **A** - left, **D** - right and **Space** - jump (or rather in current state - fly)
