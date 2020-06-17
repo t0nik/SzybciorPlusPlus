@@ -8,9 +8,13 @@ To run the game, open the VC++ Project file, in the configuration field choose D
 
 ### How to play:
 **Movement:** You can move your character using **A** - left, **D** - right and **Space** - jump (or rather in current state - fly)
+
 **Editing:** **LMB** - placing/choosing tiles, **RMB** - removing tiles, **C** - enable/disable collision on the tile
+
 You can Load/Save the game map in the Editor.
+
 The goal of the game is yet to be established.
+
 Try not to get killed by deadly spikes! (Fortunately, you can't die from them, for now at least)
 
 
