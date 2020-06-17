@@ -7,7 +7,12 @@ To run the game, open the VC++ Project file, in the configuration field choose D
 **SFML version:** SFML 2.5.1
 
 ### How to play:
-You can move your character using **A** - left, **D** - right and **Space** - jump (or rather in current state - fly)
+**Movement:** You can move your character using **A** - left, **D** - right and **Space** - jump (or rather in current state - fly)
+**Editing:** **LMB** - placing/choosing tiles, **RMB** - removing tiles, **C** - enable/disable collision on the tile
+You can Load/Save the game map in the Editor.
+The goal of the game is yet to be established.
+Try not to get killed by deadly spikes! (Fortunately, you can't die from them, for now at least)
+
 
 ### Changelog:
 
