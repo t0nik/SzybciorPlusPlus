@@ -9,11 +9,9 @@ To run the game, open the VC++ Project file, in the configuration field choose D
 ### How to play:
 **Movement:** You can move your character using **A** - left, **D** - right and **Space** - fly
 
-**Editing:** Move your camera  using **A** - left, **D** - right, **W** - up, **S** - down,
-
-**LMB** - placing/choosing tiles, **RMB** - removing tiles, **C** - enable/disable collision on the tile
-
-**leftArrow** - previous type **rightArrow** - next type
+**Editing:** Move your camera  using **A** - left, **D** - right, **W** - up, **S** - down, 
+**LMB** - placing/choosing tiles, **RMB** - removing tiles, **C** - enable/disable collision on the tile, 
+**leftArrow** - previous type, **rightArrow** - next type
 
 You can Load/Save the game map in the Editor.
 
