@@ -29,6 +29,7 @@ public:
 	void stopVelocityY();
 	void move(const float dir_x, const float dir_y, const float& dt);
 	void jump(const float dir_y, const float& dt);
+	//void gravity(const float dir_y, const float& dt);
 	void update(const float &dt);
 };
 

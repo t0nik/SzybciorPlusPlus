@@ -115,11 +115,15 @@ void Entity::stopVelocityY()
 		this->movementComponent->stopVelocityY();
 }
 
+bool Entity::onGround()
+{
+	return false;
+}
+
 void Entity::jump(const float dir_y, const float& dt)
 {
 	if (this->movementComponent)
 	{
-		//if (&this->movementComponent->onGround)
 		this->movementComponent->jump(dir_y, dt);
 	}
 }

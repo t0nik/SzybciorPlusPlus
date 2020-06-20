@@ -41,7 +41,7 @@ public:
 	virtual void stopVelocity();
 	virtual void stopVelocityX();
 	virtual void stopVelocityY();
-
+	bool onGround();
 	virtual void update(const float& dt);
 	virtual void render(sf::RenderTarget& target);
 };

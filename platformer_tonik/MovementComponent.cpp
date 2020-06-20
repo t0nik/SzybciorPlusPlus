@@ -64,6 +64,7 @@ void MovementComponent::jump(const float dir_y, const float& dt)
 		
 }
 
+
 void MovementComponent::update(const float& dt)
 {
 	/*Sprawdza maksymaln¹ prêdkoœæ i opó¿nia sprite.

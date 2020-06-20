@@ -1,2 +1,8 @@
-﻿  Player.cpp
+﻿  Tilemap.cpp
+C:\Users\ZALMAN\source\repos\platformer_tonik\.git\SzybciorPlusPlus\platformer_tonik\Tilemap.cpp(261,23): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
+C:\Users\ZALMAN\source\repos\platformer_tonik\.git\SzybciorPlusPlus\platformer_tonik\Tilemap.cpp(267,21): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
+C:\Users\ZALMAN\source\repos\platformer_tonik\.git\SzybciorPlusPlus\platformer_tonik\Tilemap.cpp(273,23): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
+C:\Users\ZALMAN\source\repos\platformer_tonik\.git\SzybciorPlusPlus\platformer_tonik\Tilemap.cpp(279,21): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
+C:\Users\ZALMAN\source\repos\platformer_tonik\.git\SzybciorPlusPlus\platformer_tonik\Tilemap.cpp(282,33): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\ZALMAN\source\repos\platformer_tonik\.git\SzybciorPlusPlus\platformer_tonik\Tilemap.cpp(284,34): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
   platformer_tonik.vcxproj -> C:\Users\ZALMAN\source\repos\platformer_tonik\.git\SzybciorPlusPlus\Debug\platformer_tonik.exe

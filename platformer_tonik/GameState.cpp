@@ -109,7 +109,7 @@ void GameState::updateInput(const float& dt)
 void GameState::updateGravity(const float& dt)
 {
 	//Grawitacja
-		this->player->move(0.f, 1.f, dt);
+		this->player->gravity(0.f, 1.f, dt);
 }
 
 void GameState::updatePlayerInput(const float& dt)
@@ -120,7 +120,7 @@ void GameState::updatePlayerInput(const float& dt)
 		this->player->move(-1.f, 0.f, dt);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_RIGHT"))))
 		this->player->move(1.f, 0.f, dt);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("JUMP"))))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("JUMP"))) && this->player->onGround())
 		this->player->jump(3.f, dt);
 }
 
