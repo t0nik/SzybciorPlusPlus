@@ -7,13 +7,17 @@ To run the game, open the VC++ Project file, in the configuration field choose D
 **SFML version:** SFML 2.5.1
 
 ### How to play:
-**Movement:** You can move your character using **A** - left, **D** - right and **Space** - jump (or rather in current state - fly)
+**Movement:** You can move your character using **A** - left, **D** - right and **Space** - fly
 
-**Editing:** **LMB** - placing/choosing tiles, **RMB** - removing tiles, **C** - enable/disable collision on the tile
+**Editing:** Move your camera  using **A** - left, **D**, **W** - up, **S** - down,
+
+**LMB** - placing/choosing tiles, **RMB** - removing tiles, **C** - enable/disable collision on the tile
+
+**leftArrow** - previous type **rightArrow** - next type
 
 You can Load/Save the game map in the Editor.
 
-The goal of the game is yet to be established.
+The goal of the game is to find finish line blocks.
 
 Try not to get killed by deadly spikes! (Fortunately, you can't die from them, for now at least)
 
@@ -30,3 +34,7 @@ Try not to get killed by deadly spikes! (Fortunately, you can't die from them, f
 	- Added a gridSize variable
 - Created bakcup of the tilemap .szybcior file
 - ~~Added fullscreen dropbox in settings~~ Gave up
+
+**Map/Mechanics (20/06/2020):**
+- Made a fully playable map
+- Failed to fix mechanics
