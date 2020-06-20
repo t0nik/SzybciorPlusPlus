@@ -17,7 +17,6 @@ public:
 	GraphicsSettings* gfxSettings;
 	std::map<std::string, int>* supportedKeys;
 	std::stack<State*>* states;
-
 };
 
 class State

@@ -55,6 +55,8 @@ Tilemap::Tilemap(float gridSize, unsigned width, unsigned height, std::string te
 	if(!this->tileSheet.loadFromFile(texture_file))
 		std::cout << "ERROR::TILEMAP::NIE UDALO SIE ZALADOWAC TEKSTUR OBSZAROW - NAZWA PLIKU: " << texture_file << "\n";
 
+	// Collision vision
+
 	this->collisionBox.setSize(sf::Vector2f(gridSize, gridSize));
 	this->collisionBox.setFillColor(sf::Color(255, 0, 0, 50));
 	this->collisionBox.setOutlineColor(sf::Color::Red);
