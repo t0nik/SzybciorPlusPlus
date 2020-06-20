@@ -57,10 +57,10 @@ Tilemap::Tilemap(float gridSize, unsigned width, unsigned height, std::string te
 
 	// Collision vision
 
-	this->collisionBox.setSize(sf::Vector2f(gridSize, gridSize));
-	this->collisionBox.setFillColor(sf::Color(255, 0, 0, 50));
-	this->collisionBox.setOutlineColor(sf::Color::Red);
-	this->collisionBox.setOutlineThickness(-1.f);
+	//this->collisionBox.setSize(sf::Vector2f(gridSize, gridSize));
+	//this->collisionBox.setFillColor(sf::Color(255, 0, 0, 50));
+	//this->collisionBox.setOutlineColor(sf::Color::Red);
+	//this->collisionBox.setOutlineThickness(-1.f);
 }
 
 Tilemap::~Tilemap()
