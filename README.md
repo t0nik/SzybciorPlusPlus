@@ -38,4 +38,3 @@ Try not to get killed by deadly spikes! (Fortunately, you can't die from them, f
 **Map/Mechanics (20/06/2020):**
 - Made a fully playable map
 - Hidden collision and hitbox vision
-- Failed to fix and implement some mechanics
